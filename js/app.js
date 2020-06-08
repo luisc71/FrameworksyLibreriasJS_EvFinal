@@ -1,11 +1,15 @@
-function cambioColor(){
+function colorUno(){
   $("h1").animate({color: '#dcff0e'}, 1000, function(){
-    $("h1").animate({color: '#ffffff'}, 1000, function(){
-      cambioColor();
-    });
+    colorDos();
+  });
+};
+function colorDos(){
+  $("h1").animate({color: '#ffffff'}, 1000, function(){
+    colorUno();
   });
 };
 
 $(document).ready(function(){
-  cambioColor();
+  colorUno();
+  colorDos();
 });
